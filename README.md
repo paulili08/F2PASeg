@@ -36,7 +36,7 @@ __解剖结构和标注的对应关系如下表:__
 发布时间: 2020-12  
 官方项目链接🔗 [kaggle](https://www.kaggle.com/datasets/newslab/cholecseg8k)  
 文章地址🔗 [Arxiv](https://arxiv.org/abs/2012.12453)  
-<p align="center"><img width="600" alt="image" src="images/334d3fbb0646933f7446a9cea3d481c.png" alt="Anatomical structures"></p>
+<p align="center"><img width="600" alt="image" src="img/cholec_sample.png" alt="Anatomical structures"></p>
 如图所示，做分割任务时将结缔组织等杂项归为Mis.类，手术器械归为Instruments类，最终得到包括背景在内的8类标注：背景(Background), 腹壁(Abdominal Wall
 ), 肝脏(Liver), 消化道(Gastrointestinal Tract), 脂肪(Fat), 手术器械(Instruments), 胆囊(Gallbladder)， 杂项(Misc).
 
