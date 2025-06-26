@@ -70,4 +70,5 @@ PASeg
 * ### 可视化结果
 将*test.py*中的save_pred参数设置为True就能生成对应的预测可视化结果。  
 部分结果如图所示：  
-<p align="center"><img width="800" alt="image" src="img/result.png" alt="result of PASeg"></p>    
+<p align="center"><img width="1000" alt="image" src="img/result.png" alt="result of PASeg"></p>    
+<p align="center"><img width="800" alt="image" src="img/seg_result.gif" alt="result of PASeg"></p>  
