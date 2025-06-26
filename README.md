@@ -21,7 +21,7 @@ segment anyting目录下包含:
 
 * ### 数据集PASeg
 数据集总共包含7845张来自120个垂体瘤内窥镜手术视频的截图。根据临床意义，由专业外科手术医生从120个视频中选出7845帧图像，每帧图像初始分别率为1920×1080或720×576. 
-<p align="center"><img width="600" alt="image" src="img/data_sample.png" alt="Anatomical structures"></p>  
+<p align="center"><img width="1000" alt="image" src="img/data_sample.png" alt="Anatomical structures"></p>  
 如图所示，我们选取了六种结构作为分割对象：鞍底(sella floor),颈动脉(ICA prominence),视神经(optic prominence),OCR(optic-carotid recess), 斜坡神经(clival recess)和蝶鞍结节(tuberculum sella).  
 数据集由专业外科神经外科一生进行像素级标注，最后分为训练集(70)/验证集(10)/测试集(20)用于模型的训练和测试。  
 
