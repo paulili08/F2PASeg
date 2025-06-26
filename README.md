@@ -1,9 +1,9 @@
 # F2PASeg
-基于SAM2的视频流分割模型，可应用于视频流场景和3D医学影像。
+
 * ### 介绍
-基于SAM-med 2D的骨性结构分割模型，主要针对颅底术内窥镜图像中的6种结构进行分割。在原版网络基础上对image encoder，mask decoder等结构进行修改从而优化网络的分割能力。  
+基于SAM2的视频流分割模型，主要针对颅底术内窥镜图像中的6种结构进行分割,可应用于视频流场景和3D医学影像。在原版网络基础上对image encoder，mask decoder等结构进行修改从而优化网络的分割能力。  
 网络结构如图所示，Image Encoder，Mask Decoder部分均可替换：  
-<p align="center"><img width="800" alt="image" src="img/framework.png" alt="F2PASeg"></p> 
+<p align="center"><img width="900" alt="image" src="img/framework.png" alt="F2PASeg"></p> 
 
 * ### 软件架构
     * __SAM 组件__  
@@ -47,33 +47,25 @@ __解剖结构和标注的对应关系如下表:__
 |colormap(BGR) | (0, 0, 0) | (140, 140, 210) | (114, 114, 255) | (156, 70, 231) | (75, 183, 186) | (227, 158, 45) | (0, 255, 170) | (0, 255, 255) |
 
 
-使用时请以如下结构进行分级(已给出train目录和json示例)：
+使用时请以如下结构进行分级：
 
-> train  
->> images(original image)  
->> mask(labeled ground truth)  
->> masks(ground truth split for each structure)  
->> image2label_train.json(image&label set)  
+``` 
+PASeg
+├── train
+│   ├── image
+│   |      ├── case_0004
+│   |         ├── 0.jpg
+│   |         ├── 1.jpg
+│   |         ├── ...
+│   ├── mask
+│         ├── case_0004
+│            ├── 0.png
+│            ├── 1.png
+│            ├── ...
+├── val
+└── test
+```
 
-> test  
->> images(original image)  
->> mask(labeled ground truth)  
->> masks(ground truth split for each structure)  
->> label2image_test.json(image&label set)  
-
-
-* ### 使用说明
-* __Step 1 从0开始的数据预处理：__  
-按前文结构设置数据集层级；  
-用*split_mask.py*将一张图中的不同结构的mask分成几张图，并生成对应的.json文件；  
-* __Step 2 下载预训练模型:__  
-使用SAM-MED2d finetune后的权重作为预训练模型，该版本相比于原版SAM网络的预训练权重增加了医疗信息，更适用于医疗场景;  
-下载链接🔗 [Google云端硬盘](https://drive.google.com/file/d/1ARiB5RkSsWmAB_8mqWnwDF8ZKTtFwsjl/view?usp=drive_link)  
-将*sam-med2d_b.pth*文件保存在pretrain文件夹下;  
-* __Step 3 模型搭建:__  
-将segment anything目录下需要使用的模块去掉后缀，修改*build_sam.py*中对应参数，即可使用；  
-* __Step 4 Train & Test:__  
-使用Mask Decoder对应的训练/测试模块。
 
 * ### 可视化结果
 将*test.py*中的save_pred参数设置为True就能生成对应的预测可视化结果。  
