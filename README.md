@@ -7,19 +7,13 @@
 
 * ### 软件架构
     * __SAM 组件__  
-segment anyting目录下包含:  
-        * 3种Image Encoder: SAM-MED2D原版Image Encoder, 带有Conv-GCN branch的Image Encoder, 带有skip connection的Image Encoder;  
-        * 1种Prompt Encoder: SAM-MED2D原版Prompt Encoder;  
-        * 4种Mask Decoder: SAM-MED2D原版Mask Deocder, 基于Unet的Decoder,基于Swin-Transformer的Decoder和基于Swin-Unet的Decoder.  
-        * SAM自动分割模组
-        * 基于SAM自动分割模组的数据增强模组  
     * __工具箱Tools__  
 包括可视化组件，mask分离组件，.json文件生成组件
     * __train & test__  
 根据不同使用场景有不同采用不同的train & test模块
 
 
-* ### 数据集PASeg
+* ### 数据集PAS
 数据集总共包含7845张来自120个垂体瘤内窥镜手术视频的截图。根据临床意义，由专业外科手术医生从120个视频中选出7845帧图像，每帧图像初始分别率为1920×1080或720×576. 
 <p align="center"><img width="1000" alt="image" src="img/data_sample.png" alt="Anatomical structures"></p>  
 如图所示，我们选取了六种结构作为分割对象：鞍底(sella floor),颈动脉(ICA prominence),视神经(optic prominence),OCR(optic-carotid recess), 斜坡神经(clival recess)和蝶鞍结节(tuberculum sella).  
